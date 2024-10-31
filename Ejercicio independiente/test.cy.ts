@@ -62,12 +62,12 @@ describe('Formulario de búsqueda en BN Venta de Bienes', function () {
         const city = 'Río Cuarto';
     
         cy.xpath('/html/body/div[3]/div[4]/form/div/div[1]/div[3]/div/select').select(province);
-        cy.wait(1000);
+        cy.wait(3000);
     
         cy.xpath('/html/body/div[3]/div[4]/form/div/div[1]/div[4]/div/select').select(city);
         cy.xpath('/html/body/div[3]/div[4]/form/div/div[2]/div[2]/button').click();
     
-        cy.wait(2000);
+        cy.wait(5000);
 
         // Obtener todos los elementos de propiedad
         cy.get('.property-item').then(($items) => {
@@ -97,7 +97,7 @@ describe('Formulario de búsqueda en BN Venta de Bienes', function () {
         cy.xpath('/html/body/div[3]/div[4]/form/div/div[1]/div[1]/div/input').first().type(propertyCode);
         cy.xpath('/html/body/div[3]/div[4]/form/div/div[2]/div[2]/button').click();
     
-        cy.wait(2000);
+        cy.wait(5000);
     
         cy.get('.property-item').should('have.length.gte', 1);
     
